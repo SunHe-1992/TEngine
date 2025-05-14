@@ -23,15 +23,17 @@ public partial class GameApp
         Log.Warning("======= 看到此条日志代表你成功运行了热更新代码 =======");
         Log.Warning("======= Entrance GameApp =======");
         Utility.Unity.AddDestroyListener(Release);
+        FUIDef.BindAll();
         StartGameLogic();
     }
-    
+
     private static void StartGameLogic()
     {
         GameEvent.Get<ILoginUI>().ShowLoginUI();
-        GameModule.UI.ShowUIAsync<BattleMainUI>();
+        //GameModule.stockUI.ShowUIAsync<BattleMainUI>();
+        GameModule.UI.ShowUI<UIPage_Test>(FUIDef.FWindow.TestUI);
     }
-    
+
     private static void Release()
     {
         SingletonSystem.Release();

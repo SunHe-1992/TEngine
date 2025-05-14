@@ -60,9 +60,9 @@ public class GameModule
     /// <summary>
     /// 获取UI模块。
     /// </summary>
-    public static UIModule UI => _ui ??= UIModule.Instance;
+    public static UIModule stockUI => _stockui ??= UIModule.Instance;
 
-    private static UIModule _ui;
+    private static UIModule _stockui;
 
     /// <summary>
     /// 获取场景模块。
@@ -84,8 +84,15 @@ public class GameModule
     public static ILocalizationModule Localization => _localization ??= Get<ILocalizationModule>();
     
     private static ILocalizationModule _localization;
+
+    /// <summary>
+    /// 获取fairy UI模块。
+    /// </summary>
+    public static FUIManager UI => _fui ??= FUIManager.Instance;
+
+    private static FUIManager _fui;
     #endregion
-    
+
     /// <summary>
     /// 获取游戏框架模块类。
     /// </summary>
@@ -110,7 +117,7 @@ public class GameModule
         _procedure = null;
         _resource = null;
         _audio = null;
-        _ui = null;
+        _stockui = null;
         _scene = null;
         _timer = null;
         _localization = null;
